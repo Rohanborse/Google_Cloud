@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Payment</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 0;
+        }
+        header {
+            background-color: #ffffff;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-bottom: 5px solid #357ae8;
+        }
+        .logo img {
+            height: 40px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: Black;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .search-box input {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 200px;
+        }
+        .profile img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .total-received {
+            font-size: 3em;
+            font-weight: 600;
+            color: #2d8cf0;
+            margin-bottom: 15px;
+        }
+        .status {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .pay-button {
+            background-color: #4285f4;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        .pay-button:hover {
+            background-color: #357ae8;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .search-box input {
+                width: 100%;
+            }
+        }
+        .payment-icons {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .powered-by {
+            font-size: 0.9em;
+            color: #555;
+            margin-right: 10px;
+            white-space: nowrap;
+        }
+        .payment-icons img {
+            height: 30px;
+            object-fit: contain;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="google_logo.svg" alt="Google Cloud Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#">Documentation</a>
+            <a href="#">Technology areas</a>
+            <a href="#">Cross-product tools</a>
+            <a href="#">Related sites</a>
+        </nav>
+        <div class="actions">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="profile">
+                <img src="profile.jpg" alt="User Profile">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Total Received Section -->
+        <div class="card">
+            <div class="header">Total Amount to Pay in Doller </div>
+            <div class="total-received">$1,700.89</div>
+            <div class="status">
+                <span>Pending: $1,700.89</span>
+                <span>In indian Currency : 1,48,652.76 Rs.</span>
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="card">
+            <div class="header">Pay this Invoice</div>
+            <form>
+                <input class="form-control" type="text" placeholder="Card number" required>
+                <input class="form-control" type="text" placeholder="MM/YY" required>
+                <input class="form-control" type="text" placeholder="CVV" required>
+		<input class="form-control" type="text" placeholder="Card Holder Name" required>
+                <button class="pay-button" type="button" onclick="window.location.href='123.html'">Pay $1700.89</button>
+            </form
+            </form>
+	    <!-- Payment Logos Section -->
+            <div class="payment-icons">
+                <span class="powered-by">Powered by</span>
+                <img src="payment-method-ach-direct-debit.svg" alt="ACH Direct Debit">
+                <img src="payment-method-alipay.svg" alt="Alipay">
+                <img src="payment-method-apple-pay.svg" alt="Apple Pay">
+                <img src="payment-method-credit-card.svg" alt="Credit Card">
+                <img src="payment-method-google-pay.svg" alt="Google Pay">
+                <img src="payment-method-microsoft-pay.svg" alt="Microsoft Pay">
+                <img src="payment-method-paypal.svg" alt="PayPal">
+                <img src="payment-method-sepa.svg" alt="SEPA">
+                <img src="payment-method-wechat-pay.svg" alt="WeChat Pay">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

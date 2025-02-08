@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+	    display: flex;
+	    flex-direction: column;
+	    min-height: 100vh;
+	    background-color: #f4f4f4;
+	}
+	header {
+            background-color: #ffffff;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: centr;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-bottom: 5px solid #357ae8;
+        }
+        .logo img {
+            height: 40px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: Black;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .search-box input {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 200px;
+        }
+        .profile img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .container {
+    	    max-width: 600px;
+   	    padding: 30px;
+ 	    background-color: white;
+	    border-radius: 15px;
+	    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	    text-align: center;
+	    margin: 20px auto 0;
+	}
+
+        select, button {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #539ee9;
+        }
+
+        /* Loading Animation */
+        #loading {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .spinner {
+            animation: rotator 1.4s linear infinite;
+        }
+
+        @keyframes rotator {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(270deg); }
+        }
+
+        .path {
+            stroke-dasharray: 187;
+            stroke-dashoffset: 0;
+            transform-origin: center;
+            animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+        }
+
+        @keyframes dash {
+            0% { stroke-dashoffset: 187; }
+            50% {
+                stroke-dashoffset: 46.75;
+                transform: rotate(135deg);
+            }
+            100% {
+                stroke-dashoffset: 187;
+                transform: rotate(450deg);
+            }
+        }
+
+        @keyframes colors {
+            0% { stroke: #4285F4; }
+            25% { stroke: #DE3E35; }
+            50% { stroke: #F7C223; }
+            75% { stroke: #1B9A59; }
+            100% { stroke: #4285F4; }
+        }
+
+        #loading p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="google_logo.svg" alt="Google Cloud Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#">Documentation</a>
+            <a href="#">Technology areas</a>
+            <a href="#">Cross-product tools</a>
+            <a href="#">Related sites</a>
+        </nav>
+        <div class="actions">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="profile">
+                <img src="profile.jpg" alt="User Profile">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Google Cloud Study Trip Payment</h2>
+        <p>Select your study trip option:</p>
+        <select id="tripOption">
+            <option value="1700">National Study Trip - $1,700</option>
+            <option value="17000">International Study Trip - $17,000</option>
+        </select>
+        <button id="paymentButton">Proceed to Payment</button>
+    </div>
+
+    <!-- Loading Animation (Initially Hidden) -->
+    <div id="loading">
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+        <p>Redirecting to the payment page...</p>
+    </div>
+
+    <script>
+        document.getElementById("paymentButton").addEventListener("click", function () {
+            const amount = document.getElementById("tripOption").value;
+
+            // Show the loading animation
+            document.getElementById("loading").style.display = "flex";
+
+            // Disable button to prevent multiple clicks
+            this.disabled = true;
+
+            // Redirect after 10 seconds
+            setTimeout(() => {
+                window.location.href = "payment_1.html"; // Redirect
+            }, 10000);
+        });
+    </script>
+</body>
+</html>
